@@ -2,16 +2,8 @@ require 'my_inject'
 
 describe NewArray do
 
-	let(:newarray) {NewArray.new(1,2,3,4)}
+	let(:newarray) {NewArray.new(5,2,3,4)}
 	let(:wordarray) {NewArray.new("may","i","have","a","large","container","of","coffee")}
-
-	add_up = Proc.new do |x,y|
-		x+y
-	end
-
-	# product = Proc.new do |x,y|
-	# 	x*y
-	# end
 
 	it 'is a subclass of array' do
 		newarray = NewArray.new

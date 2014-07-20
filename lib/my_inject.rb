@@ -21,5 +21,4 @@ class NewArray < Array
 		result
 	end
 
-
 end	
