@@ -7,7 +7,7 @@ class NewArray < Array
 	end
 
 
-	def my_inject start = :default_value, &block
+	def inject start = :default_value, &block
 		if start == :default_value
 			result = self[0]
 			block_range = (1..(self.length-1))

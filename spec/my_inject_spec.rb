@@ -18,7 +18,7 @@ describe NewArray do
 		expect(newarray).to be_a(Array)
 	end
 
-	context 'has a my_inject method that' do
+	context 'has a inject method that' do
 		
 		add_up = Proc.new do |x,y|
 			x+y
@@ -35,15 +35,15 @@ describe NewArray do
 		context 'when no start value is given' do
 
 			it 'can add an array' do
-				expect(newarray.my_inject(&add_up)).to eq newarray.inject(&add_up)
+				expect(newarray.inject(&add_up)).to eq 10
 			end	
 
 			it 'can give the product of an array' do
-				expect(newarray.my_inject(&product)).to eq newarray.inject(&product)
+				expect(newarray.inject(&product)).to eq 24
 			end
 
 			it 'can give the longest word in an array' do
-				expect(wordarray.my_inject(&longest_word)).to eq wordarray.inject(&longest_word)
+				expect(wordarray.inject(&longest_word)).to eq "container"
 			end
 
 		end
@@ -51,15 +51,15 @@ describe NewArray do
 		context 'when no start value is given' do
 
 			it 'can add an array' do
-				expect(newarray.my_inject(10,&add_up)).to eq newarray.inject(10,&add_up)
+				expect(newarray.inject(10,&add_up)).to eq 20
 			end	
 
 			it 'can give the product of an array' do
-				expect(newarray.my_inject(10,&product)).to eq newarray.inject(10,&product)
+				expect(newarray.inject(10,&product)).to eq 240
 			end
 
 			it 'can give the longest word in an array' do
-				expect(wordarray.my_inject("habidasher",&longest_word)).to eq wordarray.inject("habidasher",&longest_word)
+				expect(wordarray.inject("habidasher",&longest_word)).to eq "habidasher"
 			end
 
 
