@@ -8,17 +8,16 @@ class NewArray < Array
 
 
 	def my_inject start = :default_value, &block
-		if start == :default_value
-			result = self[0]
-			block_range = (1..(self.length-1))
-		else
-			result = start
-			block_range = (0..(self.length-1))
-		end	
+		result, block_range = determine_inject start
 		for i in block_range
 			result = block.call(result,self[i])
 		end
 		result
+	end
+
+	def determine_inject start
+		return [self[0],(1..(self.length-1))] if start == :default_value
+		return [start, (0..(self.length-1))]
 	end
 
 end	
